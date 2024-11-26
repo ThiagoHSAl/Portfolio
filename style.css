@@ -1,10 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
 body {
     box-sizing: border-box;
     width: 100%;
@@ -18,45 +11,80 @@ body {
     color: #22d4fd;
 }
 
-.apresentacao{
+.apresentacao {
     display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem linha em telas pequenas */
     margin: 8%;
     align-items: center;
-   justify-content: space-evenly;
+    justify-content: space-evenly;
+    gap: 20px;
 }
 
 .apresentacao__conteudo {
-    width: 615px;
+    flex: 1; /* Faz com que a largura seja adaptável */
+    min-width: 280px; /* Garante um limite mínimo de largura */
+    max-width: 600px; /* Limita a largura máxima */
     display: flex;
     flex-direction: column;
     gap: 40px;
 }
 
-.apresentacao__conteudo__titulo{
-    font-size: 36px;
-    font-family:'Krona one', sans-serif;
+.apresentacao__conteudo__titulo {
+    font-size: 2rem; /* Tamanho proporcional */
+    font-family: 'Krona One', sans-serif;
 }
 
-.apresentacao__conteudo__texto{
-    font-size: 24px;
-    font-family:'Montserrat',sans-serif;
+.apresentacao__conteudo__texto {
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
 }
 
-.apresentacao__links{
-    display: flex;    
+.apresentacao__links {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os links quebrem linha em telas pequenas */
+    gap: 10px;
     justify-content: space-between;
 }
 
-.apresentacao__links__link{
+.apresentacao__links__link {
     background-color: #22d4fd;
-    width: 280px;
+    flex: 1; /* Links ocupam o mesmo espaço */
+    min-width: 120px; /* Garante que o link não fique muito pequeno */
+    max-width: 280px; /* Limita o tamanho máximo */
     text-align: center;
     border-radius: 16px;
-    font-size: 24px;
-    padding: 21.5px 0;
+    font-size: 1rem;
+    padding: 15px;
     text-decoration: none;
     color: black;
-    font-family: 'Montserrat',sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
+}
+
+img {
+    max-width: 100%; /* A imagem não ultrapassa a largura do container */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 8px;
+}
+
+/* Estilos específicos para telas menores */
+@media (max-width: 768px) {
+    .apresentacao {
+        margin: 5%; /* Reduz a margem em telas menores */
+        flex-direction: column; /* Alinha os itens verticalmente */
+    }
+
+    .apresentacao__conteudo {
+        max-width: 100%; /* Permite que o conteúdo use toda a largura disponível */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .apresentacao__conteudo__titulo {
+        font-size: 1.5rem; /* Reduz o tamanho da fonte */
+    }
+
+    .apresentacao__conteudo__texto {
+        font-size: 1rem; /* Reduz o tamanho da fonte */
+    }
 }
