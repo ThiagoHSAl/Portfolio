@@ -1,0 +1,20 @@
+.texto-destaque{
+    color:aquamarine;
+}
+
+.titulo-destaque{
+    color: blue;
+}
+
+.urgente{
+    color: red;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    border: 10px solid black;
+}
