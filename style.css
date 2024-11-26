@@ -86,6 +86,7 @@ img {
 
     .apresentacao__conteudo__texto {
         font-size: 1rem; 
+        text-align: center; 
     }
     
     img{
