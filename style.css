@@ -87,5 +87,10 @@ img {
     .apresentacao__conteudo__texto {
         font-size: 1rem; 
     }
+    
+    img{
+        width: 80%;
+        max-width: 300px;
+    }
 }
 
