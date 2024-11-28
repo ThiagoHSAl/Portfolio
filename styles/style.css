@@ -141,3 +141,15 @@ body {
 ul li {
     margin-bottom: 5px; 
   }
+
+@media(max-width: 1200px){
+    .cabecalho{
+        padding-top: 10%;
+    }
+
+    .apresentacao{
+        flex-direction: column-reverse;
+        justify-content: flex-start;
+        align-items: center;
+    }
+}
