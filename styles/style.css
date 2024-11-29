@@ -16,6 +16,9 @@
 
 .cabecalho {
     padding: 2% 0% 0% 15%;
+    position: relative;
+    z-index: 10;
+    margin-bottom: 5vh;
 }
 
 .cabecalho__menu{
@@ -37,6 +40,9 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     box-sizing: border-box;
     width: 100vw;
     padding: 5px;
@@ -50,9 +56,28 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 5%;   
+    gap: 5%;
+    z-index: 1;   
 }
 
+.apresentacao_sobre_mim{
+    padding: 0% 20% 2% 15%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 5%;
+    z-index: 1;   
+}
+
+.apresentacao_curriculo{
+    padding: 0% 20% 2% 15%;
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 5%;
+    z-index: 1;   
+}
 .apresentacao__conteudo {
     width: 65%;
     display: flex;
@@ -63,6 +88,12 @@ body {
 .apresentacao__conteudo__titulo {
     font-size: 2.0rem;
     font-family: var(--fonte-secundaria);
+}
+
+.apresentacao__conteudo__titulo__curriculo {
+    font-size: 2.0rem;
+    font-family: var(--fonte-secundaria);
+    text-align: center;
 }
 
 .TituloDestacado {
@@ -127,19 +158,9 @@ body {
    
 }
 
-/*.rodape{
-    color: var(--cor-primaria);
-    background-color: var(--cor-terciaria);
-    padding: 8px; 
-    text-align: center;
-    font-family: var(--fonte-primaria);
-    font-weight: 400;
-    font-size: 1.2rem;
-    height: 2vh;
-}*/
 
 ul li {
-    margin-bottom: 5px; 
+    margin-bottom: 1vh; 
   }
 
 @media(max-width: 1200px){
@@ -169,8 +190,26 @@ ul li {
         z-index: 2;
     }
 
+    .apresentacao_sobre_mim{
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 5%;
+        z-index: 2;
+    }
+
+    .apresentacao_curriculo{
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        align-items: center;
+        width: 90%;
+        padding: 5%;
+        z-index: 2;
+    }
+
     .apresentacao__imagem {
         object-fit: contain;
+        height: 40vh;
     }
     
     .apresentacao__conteudo {
@@ -178,6 +217,7 @@ ul li {
     }
 
     .apresentacao__conteudo__titulo {
+        padding-top: 5vh;
         text-align: center;
         font-size: 8vw;
     }
@@ -204,4 +244,9 @@ ul li {
         max-width: 100%;
         object-fit: contain;
     }
+
+    ul li {
+        list-style-position: inside;
+        margin-bottom: 4vh; 
+      }
 }
