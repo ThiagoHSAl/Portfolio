@@ -177,6 +177,10 @@ ul li {
         text-align: center;
         font-size: 2.4rem;
     }
+    .apresentacao__conteudo__texto a{
+        text-align: center;
+        font-size: 2.4rem;
+    }
 
     .apresentacao__links__subtitulo {
         text-align: center;
