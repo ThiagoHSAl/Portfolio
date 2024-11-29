@@ -150,6 +150,7 @@ ul li {
         padding: 2% 0 0 0;
         position: relative;
         z-index: 10;
+        width: 90vw;
     }
 
     .cabecalho__menu__link {
@@ -162,6 +163,10 @@ ul li {
         align-items: center;
         padding: 5%;
         z-index: 2;
+    }
+
+    .apresentacao__imagem {
+        object-fit: contain;
     }
     
     .apresentacao__conteudo {
