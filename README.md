@@ -1,4 +1,5 @@
-# Portfólio Olá, Bem vindo ao meu projeto de portfólio.
+# Portfólio 
+Olá, Bem vindo ao meu projeto de portfólio.
 
 ![image](assets/Capa-README.jpg)
 
