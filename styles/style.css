@@ -158,7 +158,7 @@ ul li {
     }
 
     .cabecalho__menu__link {
-        font-size: 2.4vw;
+        font-size: 4.8vw;
     }
     
     .apresentacao{
@@ -179,26 +179,26 @@ ul li {
 
     .apresentacao__conteudo__titulo {
         text-align: center;
-        font-size: 4vw;
+        font-size: 8vw;
     }
 
     .apresentacao__conteudo__texto {
         text-align: center;
-        font-size: 2.4vw;
+        font-size: 4.8vw;
     }
     .apresentacao__conteudo__texto a{
         text-align: center;
-        font-size: 2.4vw;
+        font-size: 4.8vw;
     }
 
     .apresentacao__links__subtitulo {
         text-align: center;
-        font-size: 2.4vw;
+        font-size: 4.8vw;
     }
 
     .apresentacao__links__navegacao {
         text-align: center;
-        font-size: 2.4vw;
+        font-size: 4.8vw;
     }
     .apresentacao__links__navegacao__logos {
         max-width: 100%;
