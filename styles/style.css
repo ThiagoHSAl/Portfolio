@@ -63,7 +63,6 @@ body {
 .apresentacao_sobre_mim{
     padding: 0% 20% 2% 15%;
     display: flex;
-    width: 100%;
     align-items: center;
     justify-content: flex-start;
     gap: 5%;
@@ -217,8 +216,7 @@ ul {
 
     .apresentacao__imagem {
         object-fit: contain;
-        height: 40vh;
-
+        width: 40vw;
     }
     
     .apresentacao__conteudo {
