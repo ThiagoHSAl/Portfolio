@@ -150,10 +150,12 @@ ul li {
         padding: 2% 0 0 0;
         position: relative;
         z-index: 10;
-        font-size: 2.4rem;
     }
 
-
+    .cabecalho__menu__link {
+        font-size: 2.4rem;
+    }
+    
     .apresentacao{
         flex-direction: column-reverse;
         justify-content: flex-end;
