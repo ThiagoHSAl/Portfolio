@@ -210,6 +210,7 @@ ul li {
     .apresentacao__imagem {
         object-fit: contain;
         height: 40vh;
+        
     }
     
     .apresentacao__conteudo {
@@ -223,7 +224,7 @@ ul li {
     }
 
     .apresentacao__conteudo__texto {
-        text-align: center;
+        text-align: justify;
         font-size: 4.8vw;
     }
     .apresentacao__conteudo__texto a{
