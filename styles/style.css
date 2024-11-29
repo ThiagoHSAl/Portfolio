@@ -159,8 +159,14 @@ body {
 }
 
 
-ul li {
+ul {
     margin-bottom: 1vh; 
+  }
+
+  ul ul {
+    margin-bottom: 1vh;
+    list-style-type: "- ";
+    padding-left: 2vw; 
   }
 
 @media(max-width: 1200px){
@@ -192,7 +198,7 @@ ul li {
 
     .apresentacao_sobre_mim{
         flex-direction: column-reverse;
-        justify-content: flex-end;
+        justify-content: flex-start;
         align-items: center;
         padding: 5%;
         z-index: 2;
@@ -210,7 +216,7 @@ ul li {
     .apresentacao__imagem {
         object-fit: contain;
         height: 40vh;
-        
+
     }
     
     .apresentacao__conteudo {
@@ -225,6 +231,9 @@ ul li {
 
     .apresentacao__conteudo__texto {
         text-align: justify;
+        hyphens: auto;
+        text-justify: distribute;
+        word-spacing: 2px;
         font-size: 4.8vw;
     }
     .apresentacao__conteudo__texto a{
@@ -246,8 +255,19 @@ ul li {
         object-fit: contain;
     }
 
-    ul li {
+    ul {
         list-style-position: inside;
         margin-bottom: 4vh; 
+        margin-top:  4vh;
       }
+    ul li {
+        margin-bottom: 4vh;
+    }
+
+    ul ul {
+        margin-bottom: 4vh;
+        list-style-position: inside;
+        list-style-type: "- ";
+        padding-left: 4vw; 
+    }
 }
