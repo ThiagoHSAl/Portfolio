@@ -15,4 +15,4 @@ Olá, Bem vindo ao meu projeto de portfólio.
 ## Feito por:
 
 ### Thiago Henrique
-### Linkedin: https://www.linkedin.com/in/thiago-henrique-silva-de-almeida-474864106/
+### Linkedin: https://www.linkedin.com/in/thiago-almeida-474864106/
