@@ -190,7 +190,7 @@ ul {
 
     .cabecalho{
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
         padding: 2% 0 0 0;
         position: relative;
         z-index: 10;
@@ -241,6 +241,12 @@ ul {
     }
 
     .apresentacao__conteudo__titulo {
+        padding-top: 5vh;
+        text-align: center;
+        font-size: 8vw;
+    }
+
+    .apresentacao__conteudo__titulo__curriculo {
         padding-top: 5vh;
         text-align: center;
         font-size: 8vw;
