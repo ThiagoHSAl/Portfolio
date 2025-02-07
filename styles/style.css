@@ -190,7 +190,7 @@ ul {
 
     .cabecalho{
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
         position: relative;
         z-index: 10;
         width: 90vw;
@@ -201,7 +201,7 @@ ul {
     }
 
     .cabecalho__menu__link {
-        font-size: 3.8vw;
+        font-size: 4.5vw;
     }
     
     .apresentacao{
