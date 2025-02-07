@@ -193,7 +193,8 @@ ul {
         justify-content: space-between;
         position: relative;
         z-index: 10;
-        width: 99vw;
+        padding-right: 3%;
+        width: 100vw;
     }
 
     .cabecalho__menu {
