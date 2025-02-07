@@ -190,11 +190,10 @@ ul {
 
     .cabecalho{
         display: flex;
-        justify-content: center;
-        padding: 2% 0 0 0;
+        justify-content: space-evenly;
         position: relative;
         z-index: 10;
-        width: 100vw;
+        width: 90vw;
     }
 
     .cabecalho__menu {
