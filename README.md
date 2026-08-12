@@ -74,8 +74,13 @@ As capas do EloRise, BookAdvisor e Datapólis são capturas de tela dos apps no 
 versão antiga.
 
 A foto de perfil (`public/img/thiago.jpg`) é um recorte quadrado de `tools/foto-original.jpg`, que
-fica versionada justamente para permitir reenquadrar depois sem precisar da foto de novo. O recorte
-atual é 800x800 a partir de (135, 170), com os olhos a 40% da altura.
+fica versionada justamente para permitir reenquadrar depois sem precisar da foto de novo.
+
+Para reenquadrar, abra **`tools/recortar.html`** no navegador: arraste a foto dentro do quadrado,
+ajuste o tamanho pelas barras, confira nas miniaturas como fica em cada lugar do site e baixe. O
+arquivo baixado substitui `public/img/thiago.jpg`. A ferramenta é uma página só, sem dependência —
+se o navegador bloquear a leitura do arquivo local (`file://`), use o botão "Usar outra foto…" para
+escolher a imagem à mão, ou sirva a pasta com `python3 -m http.server`.
 
 ### Tempo de serviço
 

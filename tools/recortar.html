@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reenquadrar a foto de perfil</title>
+    <style>
+      :root {
+        --bg: #070a10;
+        --surface: #0d131e;
+        --surface-2: #121a27;
+        --line: rgba(255, 255, 255, 0.12);
+        --ink: #e9eef6;
+        --muted: #8e9cb2;
+        --accent: #3ddbf5;
+        --sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        padding: 24px;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: var(--sans);
+        line-height: 1.55;
+      }
+
+      .topo { max-width: 1100px; margin: 0 auto 22px; }
+      h1 { margin: 0 0 6px; font-size: 1.5rem; letter-spacing: -0.02em; }
+      .sub { margin: 0; color: var(--muted); font-size: 0.92rem; max-width: 68ch; }
+
+      .painel {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 300px;
+        gap: 20px;
+        align-items: start;
+      }
+
+      @media (max-width: 860px) { .painel { grid-template-columns: 1fr; } }
+
+      .caixa {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: var(--surface);
+        padding: 16px;
+      }
+
+      canvas#palco {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        cursor: grab;
+        touch-action: none;
+        background: #000;
+      }
+
+      canvas#palco.arrastando { cursor: grabbing; }
+
+      label.campo { display: block; margin-top: 14px; font-size: 0.8rem; color: var(--muted); }
+      label.campo:first-of-type { margin-top: 0; }
+
+      input[type='range'] { width: 100%; accent-color: var(--accent); }
+
+      .linha { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+      .valor { font-family: var(--mono); font-size: 0.8rem; color: var(--ink); }
+
+      .previas { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; margin-top: 6px; }
+      .previa { text-align: center; }
+      .previa canvas { border-radius: 14px; border: 1px solid var(--line); display: block; }
+      .previa span { display: block; margin-top: 5px; font-family: var(--mono); font-size: 0.62rem; color: var(--muted); }
+
+      button, .botao {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        margin-top: 14px;
+        padding: 11px 14px;
+        border-radius: 10px;
+        border: 1px solid var(--line);
+        background: var(--surface-2);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      button.principal { background: var(--accent); color: #04070c; border-color: transparent; }
+      button:hover { filter: brightness(1.1); }
+      button:disabled { opacity: 0.45; cursor: not-allowed; filter: none; }
+
+      code {
+        display: block;
+        margin-top: 12px;
+        padding: 10px 12px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--bg);
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--accent);
+        overflow-x: auto;
+        white-space: pre;
+      }
+
+      ol { margin: 10px 0 0; padding-left: 1.15rem; color: var(--muted); font-size: 0.86rem; }
+      ol li { margin-bottom: 5px; }
+      ol strong { color: var(--ink); }
+
+      .aviso { color: var(--muted); font-size: 0.8rem; margin-top: 12px; }
+      input[type='file'] { font-size: 0.82rem; color: var(--muted); width: 100%; }
+    </style>
+  </head>
+
+  <body>
+    <div class="topo">
+      <h1>Reenquadrar a foto de perfil</h1>
+      <p class="sub">
+        Arraste a foto para escolher o que fica dentro do quadrado, use a barra para abrir ou fechar
+        o enquadramento, e baixe. O arquivo baixado substitui <code
+          style="display: inline; padding: 1px 5px; border: 0; background: none"
+          >public/img/thiago.jpg</code
+        >.
+      </p>
+    </div>
+
+    <div class="painel">
+      <div class="caixa">
+        <canvas id="palco" width="900" height="900"></canvas>
+        <p class="aviso" id="dica">Carregando <b>tools/foto-original.jpg</b>…</p>
+        <input type="file" id="arquivo" accept="image/*" hidden />
+      </div>
+
+      <div class="caixa">
+        <label class="campo">
+          <span class="linha"><span>Enquadramento</span><span class="valor" id="valLado">—</span></span>
+          <input type="range" id="lado" min="200" max="2000" value="800" />
+        </label>
+
+        <label class="campo">
+          <span class="linha"><span>Tamanho do arquivo</span><span class="valor" id="valSaida">800 px</span></span>
+          <input type="range" id="saida" min="480" max="1200" step="40" value="800" />
+        </label>
+
+        <label class="campo" style="display: flex; gap: 8px; align-items: center">
+          <input type="checkbox" id="guias" checked style="accent-color: var(--accent)" />
+          <span>Mostrar eixo e terços</span>
+        </label>
+
+        <p class="campo" style="margin-top: 18px">Como vai aparecer no site</p>
+        <div class="previas">
+          <div class="previa"><canvas id="p1" width="116" height="116"></canvas><span>herói</span></div>
+          <div class="previa"><canvas id="p2" width="80" height="80"></canvas><span>sobre</span></div>
+          <div class="previa"><canvas id="p3" width="48" height="48"></canvas><span>miniatura</span></div>
+        </div>
+
+        <button class="principal" id="baixar" disabled>Baixar thiago.jpg</button>
+        <button id="trocar">Usar outra foto…</button>
+
+        <code id="coords">—</code>
+
+        <ol>
+          <li>Baixe e mova o arquivo para <strong>public/img/thiago.jpg</strong>.</li>
+          <li>Regere o cartão de compartilhamento abrindo <strong>tools/og-card.html</strong> numa janela de 1200×630 e capturando como <strong>public/img/og.jpg</strong>.</li>
+          <li><strong>git add -A &amp;&amp; git commit &amp;&amp; git push</strong> — o deploy é automático.</li>
+        </ol>
+      </div>
+    </div>
+
+    <script>
+      const palco = document.getElementById('palco')
+      const ctx = palco.getContext('2d')
+      const previas = [
+        [document.getElementById('p1'), 116],
+        [document.getElementById('p2'), 80],
+        [document.getElementById('p3'), 48],
+      ]
+      const elLado = document.getElementById('lado')
+      const elSaida = document.getElementById('saida')
+      const elGuias = document.getElementById('guias')
+      const elBaixar = document.getElementById('baixar')
+      const elCoords = document.getElementById('coords')
+      const elDica = document.getElementById('dica')
+      const elArquivo = document.getElementById('arquivo')
+
+      let img = null
+      let lado = 800
+      let cx = 0
+      let cy = 0
+      let escala = 1 // pixels do canvas por pixel da imagem
+
+      function limitar() {
+        lado = Math.min(lado, img.width, img.height)
+        cx = Math.max(lado / 2, Math.min(cx, img.width - lado / 2))
+        cy = Math.max(lado / 2, Math.min(cy, img.height - lado / 2))
+      }
+
+      function desenhar() {
+        if (!img) return
+        limitar()
+
+        // A foto ocupa o palco inteiro, preservando a proporção.
+        escala = Math.min(palco.width / img.width, palco.height / img.height)
+        const larg = img.width * escala
+        const alt = img.height * escala
+        const ox = (palco.width - larg) / 2
+        const oy = (palco.height - alt) / 2
+
+        ctx.clearRect(0, 0, palco.width, palco.height)
+        ctx.drawImage(img, ox, oy, larg, alt)
+
+        // Escurece tudo fora do quadrado, para o recorte ficar óbvio.
+        const qx = ox + (cx - lado / 2) * escala
+        const qy = oy + (cy - lado / 2) * escala
+        const ql = lado * escala
+        ctx.save()
+        ctx.fillStyle = 'rgba(4, 7, 12, 0.72)'
+        ctx.beginPath()
+        ctx.rect(0, 0, palco.width, palco.height)
+        ctx.rect(qx, qy, ql, ql)
+        ctx.fill('evenodd')
+        ctx.restore()
+
+        ctx.strokeStyle = '#3ddbf5'
+        ctx.lineWidth = 2
+        ctx.strokeRect(qx, qy, ql, ql)
+
+        if (elGuias.checked) {
+          ctx.strokeStyle = 'rgba(255, 255, 255, 0.35)'
+          ctx.lineWidth = 1
+          for (const f of [1 / 3, 2 / 3]) {
+            ctx.beginPath()
+            ctx.moveTo(qx + ql * f, qy)
+            ctx.lineTo(qx + ql * f, qy + ql)
+            ctx.moveTo(qx, qy + ql * f)
+            ctx.lineTo(qx + ql, qy + ql * f)
+            ctx.stroke()
+          }
+          // Eixo vertical: a referência para "estou centralizado?"
+          ctx.strokeStyle = 'rgba(255, 90, 90, 0.9)'
+          ctx.lineWidth = 2
+          ctx.beginPath()
+          ctx.moveTo(qx + ql / 2, qy)
+          ctx.lineTo(qx + ql / 2, qy + ql)
+          ctx.stroke()
+        }
+
+        const x0 = Math.round(cx - lado / 2)
+        const y0 = Math.round(cy - lado / 2)
+        elCoords.textContent = `recorte: (${x0}, ${y0}) — ${Math.round(lado)}×${Math.round(lado)} px\nfoto:    ${img.width}×${img.height} px`
+        document.getElementById('valLado').textContent = `${Math.round(lado)} px`
+
+        for (const [c, tam] of previas) {
+          const g = c.getContext('2d')
+          g.clearRect(0, 0, tam, tam)
+          g.drawImage(img, x0, y0, lado, lado, 0, 0, tam, tam)
+        }
+      }
+
+      function carregar(url, revogar) {
+        const novo = new Image()
+        novo.onload = () => {
+          if (revogar) URL.revokeObjectURL(url)
+          img = novo
+          lado = Math.min(800, img.width, img.height)
+          cx = img.width / 2
+          cy = img.height * 0.42 // retratos costumam ficar melhor acima do meio
+          elLado.max = Math.min(img.width, img.height)
+          elLado.value = lado
+          elBaixar.disabled = false
+          elDica.textContent = 'Arraste dentro da foto para reposicionar. A linha vermelha é o eixo do quadro.'
+          desenhar()
+        }
+        novo.onerror = () => {
+          elDica.innerHTML =
+            'Não consegui abrir <b>tools/foto-original.jpg</b> automaticamente (o navegador bloqueia leitura de arquivo local). Clique em <b>Usar outra foto…</b> e escolha a foto.'
+        }
+        novo.src = url
+      }
+
+      // Tenta a foto versionada; se o navegador bloquear (file://), o usuário escolhe à mão.
+      fetch('foto-original.jpg')
+        .then((r) => (r.ok ? r.blob() : Promise.reject()))
+        .then((b) => carregar(URL.createObjectURL(b), true))
+        .catch(() => carregar('foto-original.jpg', false))
+
+      document.getElementById('trocar').addEventListener('click', () => elArquivo.click())
+      elArquivo.addEventListener('change', (e) => {
+        const f = e.target.files[0]
+        if (f) carregar(URL.createObjectURL(f), true)
+      })
+
+      elLado.addEventListener('input', () => {
+        lado = Number(elLado.value)
+        desenhar()
+      })
+
+      elSaida.addEventListener('input', () => {
+        document.getElementById('valSaida').textContent = `${elSaida.value} px`
+      })
+
+      elGuias.addEventListener('change', desenhar)
+
+      let arrastando = false
+      let ultimo = null
+
+      palco.addEventListener('pointerdown', (e) => {
+        if (!img) return
+        arrastando = true
+        ultimo = { x: e.offsetX, y: e.offsetY }
+        palco.classList.add('arrastando')
+        palco.setPointerCapture(e.pointerId)
+      })
+
+      palco.addEventListener('pointermove', (e) => {
+        if (!arrastando) return
+        // O canvas é exibido menor que sua resolução interna: converte o movimento.
+        const fator = palco.width / palco.getBoundingClientRect().width
+        cx -= ((e.offsetX - ultimo.x) * fator) / escala
+        cy -= ((e.offsetY - ultimo.y) * fator) / escala
+        ultimo = { x: e.offsetX, y: e.offsetY }
+        desenhar()
+      })
+
+      for (const ev of ['pointerup', 'pointercancel', 'pointerleave']) {
+        palco.addEventListener(ev, () => {
+          arrastando = false
+          palco.classList.remove('arrastando')
+        })
+      }
+
+      palco.addEventListener(
+        'wheel',
+        (e) => {
+          if (!img) return
+          e.preventDefault()
+          lado = Math.max(200, lado * (e.deltaY > 0 ? 1.05 : 0.95))
+          limitar()
+          elLado.value = Math.round(lado)
+          desenhar()
+        },
+        { passive: false },
+      )
+
+      elBaixar.addEventListener('click', () => {
+        const tam = Number(elSaida.value)
+        const fora = document.createElement('canvas')
+        fora.width = fora.height = tam
+        fora
+          .getContext('2d')
+          .drawImage(img, Math.round(cx - lado / 2), Math.round(cy - lado / 2), lado, lado, 0, 0, tam, tam)
+        fora.toBlob(
+          (blob) => {
+            const a = document.createElement('a')
+            a.href = URL.createObjectURL(blob)
+            a.download = 'thiago.jpg'
+            a.click()
+            setTimeout(() => URL.revokeObjectURL(a.href), 1000)
+          },
+          'image/jpeg',
+          0.9,
+        )
+      })
+    </script>
+  </body>
+</html>
