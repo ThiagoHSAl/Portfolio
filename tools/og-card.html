@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&family=JetBrains+Mono:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        width: 1200px; height: 630px; overflow: hidden;
+        background: #070a10; color: #e9eef6;
+        font-family: 'Inter', sans-serif;
+        display: flex; align-items: center; gap: 64px;
+        padding: 0 72px; position: relative;
+      }
+      .aurora {
+        position: absolute; inset: 0; z-index: 0;
+        background:
+          radial-gradient(40rem 22rem at 8% -10%, rgba(61, 219, 245, 0.26), transparent 70%),
+          radial-gradient(34rem 20rem at 95% 15%, rgba(255, 179, 71, 0.18), transparent 70%);
+      }
+      .grid {
+        position: absolute; inset: 0; z-index: 0;
+        background-image: radial-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1px);
+        background-size: 26px 26px;
+        mask-image: radial-gradient(ellipse 80% 70% at 40% 0%, #000 10%, transparent 78%);
+      }
+      .texto { position: relative; z-index: 1; flex: 1; }
+      .eyebrow {
+        font-family: 'JetBrains Mono', monospace; font-size: 17px; font-weight: 500;
+        letter-spacing: 0.16em; text-transform: uppercase; color: #3ddbf5;
+      }
+      h1 {
+        font-family: 'Space Grotesk', sans-serif; font-size: 62px; font-weight: 700;
+        letter-spacing: -0.025em; line-height: 1.06; margin-top: 22px;
+      }
+      .gradiente {
+        background: linear-gradient(100deg, #3ddbf5, #ffb347);
+        -webkit-background-clip: text; background-clip: text; color: transparent;
+      }
+      p { margin-top: 26px; font-size: 25px; line-height: 1.45; color: #c2ccdb; max-width: 30ch; }
+      .rodape {
+        margin-top: 34px; display: flex; align-items: center; gap: 14px;
+        font-family: 'JetBrains Mono', monospace; font-size: 18px; color: #8e9cb2;
+      }
+      .ponto { width: 7px; height: 7px; border-radius: 999px; background: #3ddbf5; }
+      .foto { position: relative; z-index: 1; width: 340px; height: 340px; flex-shrink: 0; }
+      .brilho {
+        position: absolute; inset: -18px; border-radius: 48px; filter: blur(38px); opacity: 0.42;
+        background: linear-gradient(140deg, #3ddbf5, #ffb347);
+      }
+      .foto img {
+        position: relative; width: 340px; height: 340px; border-radius: 36px;
+        object-fit: cover; border: 1px solid rgba(255, 255, 255, 0.14);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="aurora"></div>
+    <div class="grid"></div>
+
+    <div class="texto">
+      <p class="eyebrow">Desenvolvedor · UFMG</p>
+      <h1>Thiago <span class="gradiente">Almeida</span></h1>
+      <p>Visão computacional embarcada, agentes de IA e aplicações de dados.</p>
+      <div class="rodape">
+        <span class="ponto"></span>
+        thiagohsal.github.io/Portfolio
+      </div>
+    </div>
+
+    <div class="foto">
+      <div class="brilho"></div>
+      <img src="../public/img/thiago.jpg" alt="" />
+    </div>
+  </body>
+</html>

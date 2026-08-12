@@ -80,6 +80,17 @@ partir de `INICIO_BOMBEIROS` em `src/lib/tempo.ts` — não precisa ser editado 
 string do dicionário ou do conteúdo aceita marcadores `{nome}`; a substituição acontece no
 provedor de idioma (`src/i18n/index.tsx`).
 
+### Cartão de compartilhamento (og:image)
+
+A imagem que aparece na prévia de WhatsApp, LinkedIn e afins é `public/img/og.jpg`,
+1200×630. Ela é gerada a partir de `tools/og-card.html` — o mesmo layout e as mesmas fontes
+do site — renderizando a página num navegador em 1200×630 e salvando como JPEG. Para
+regerar depois de trocar a foto ou o texto, abra `tools/og-card.html` no navegador com a
+janela nessa medida e capture, ou renderize por linha de comando.
+
+As prévias ficam em cache nas plataformas: o WhatsApp costuma segurar a imagem antiga por
+horas. Para forçar, compartilhe a URL com um parâmetro qualquer no fim (`?v=2`).
+
 ## Deploy
 
 O push na `main` dispara `.github/workflows/deploy.yml`, que roda o typecheck, o build e publica
