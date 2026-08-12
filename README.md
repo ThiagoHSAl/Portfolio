@@ -73,6 +73,10 @@ As capas do EloRise, BookAdvisor e Datapólis são capturas de tela dos apps no 
 16:10. Quando a interface de algum deles mudar, vale recapturar para o portfólio não mostrar uma
 versão antiga.
 
+A foto de perfil (`public/img/thiago.jpg`) é um recorte quadrado de `tools/foto-original.jpg`, que
+fica versionada justamente para permitir reenquadrar depois sem precisar da foto de novo. O recorte
+atual é 800x800 a partir de (135, 170), com os olhos a 40% da altura.
+
 ### Tempo de serviço
 
 O tempo no Corpo de Bombeiros aparece no texto como o marcador `{anosBombeiro}` e é calculado a
