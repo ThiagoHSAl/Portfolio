@@ -7,7 +7,7 @@ export const profile = {
   /** Endereço institucional, o mesmo que consta no artigo publicado. */
   emailAcademico: 'thiagohenriquesilva@dcc.ufmg.br',
   github: 'https://github.com/ThiagoHSAl',
-  linkedin: 'https://www.linkedin.com/in/thiago-almeida-474864106/',
+  linkedin: 'https://www.linkedin.com/in/thiagohsal/',
   siteRepo: 'https://github.com/ThiagoHSAl/Portfolio',
   photo: 'img/thiago.jpg',
 }
