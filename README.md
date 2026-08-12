@@ -89,6 +89,17 @@ partir de `INICIO_BOMBEIROS` em `src/lib/tempo.ts` — não precisa ser editado 
 string do dicionário ou do conteúdo aceita marcadores `{nome}`; a substituição acontece no
 provedor de idioma (`src/i18n/index.tsx`).
 
+### Capa do LinkedIn
+
+`public/img/capa-linkedin.jpg` é a imagem de fundo do perfil do LinkedIn, 1584x396 (4:1). O fonte
+está em `tools/capa-linkedin.html` e usa o mesmo layout do site. Para regerar, renderize a página
+numa janela de 1584x396 e salve como JPEG.
+
+O arquivo mora em `public/` de propósito, ainda que o site não o use: assim ele fica acessível em
+`https://thiagohsal.github.io/Portfolio/img/capa-linkedin.jpg`, o que permite baixá-lo do celular na
+hora de trocar a capa. Adicionando `?guias` — na verdade, a classe `guias` no `<body>` — a página
+desenha a área coberta pela foto de perfil, para conferir que nada importante cai ali.
+
 ### Cartão de compartilhamento (og:image)
 
 A imagem que aparece na prévia de WhatsApp, LinkedIn e afins é `public/img/og.jpg`,

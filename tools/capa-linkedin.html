@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&family=JetBrains+Mono:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Capa de perfil do LinkedIn: 1584x396 (4:1).
+         A foto de perfil cobre o canto inferior esquerdo no desktop, e no celular
+         a imagem é cortada nas laterais — por isso todo o conteúdo fica no bloco
+         central-direito e verticalmente centrado. */
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+      body {
+        width: 1584px;
+        height: 396px;
+        overflow: hidden;
+        position: relative;
+        background: #070a10;
+        color: #e9eef6;
+        font-family: 'Inter', sans-serif;
+      }
+
+      .aurora {
+        position: absolute; inset: 0; z-index: 1;
+        background:
+          radial-gradient(48rem 26rem at 22% 120%, rgba(61, 219, 245, 0.28), transparent 68%),
+          radial-gradient(40rem 24rem at 78% -20%, rgba(255, 179, 71, 0.16), transparent 70%);
+      }
+
+      .grid {
+        position: absolute; inset: 0; z-index: 1;
+        background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+        background-size: 28px 28px;
+        mask-image: linear-gradient(100deg, #000 8%, transparent 62%);
+      }
+
+      /* Imagem aérea real, com a detecção, sangrando da direita. */
+      .foto {
+        position: absolute; inset: 0 0 0 auto; z-index: 1;
+        width: 44%;
+        background: url('../public/img/sar-deteccao-destaque.jpg') 40% 58% / cover no-repeat;
+        mask-image: linear-gradient(90deg, transparent 0%, #000 58%, #000 100%);
+        opacity: 0.36;
+      }
+
+      .veu {
+        position: absolute; inset: 0; z-index: 2;
+        background: linear-gradient(90deg, #070a10 38%, rgba(7, 10, 16, 0.8) 66%, rgba(7, 10, 16, 0.45) 100%);
+      }
+
+      .conteudo {
+        position: absolute; z-index: 3;
+        left: 372px; top: 50%; transform: translateY(-50%);
+        max-width: 900px;
+      }
+
+      .eyebrow {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 17px; font-weight: 500;
+        letter-spacing: 0.17em; text-transform: uppercase;
+        color: #3ddbf5;
+      }
+
+      h1 {
+        margin-top: 16px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 46px; font-weight: 700;
+        letter-spacing: -0.022em; line-height: 1.16;
+      }
+
+      h1 .destaque {
+        background: linear-gradient(100deg, #3ddbf5, #ffb347);
+        -webkit-background-clip: text; background-clip: text; color: transparent;
+      }
+
+      .rodape {
+        margin-top: 20px;
+        display: flex; align-items: center; gap: 14px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 18px; color: #97a6ba;
+      }
+
+      .ponto { width: 7px; height: 7px; border-radius: 999px; background: #3ddbf5; flex-shrink: 0; }
+      .separador { width: 1px; height: 17px; background: rgba(255, 255, 255, 0.2); }
+
+      /* Guias de área segura — some na captura final, serve só para conferir. */
+      body.guias .zona {
+        position: absolute; z-index: 9;
+        border: 2px dashed rgba(255, 90, 90, 0.85);
+      }
+      body:not(.guias) .zona { display: none; }
+      .zona-foto { left: 44px; bottom: 0; width: 316px; height: 240px; border-radius: 999px; }
+      .zona-mobile { left: 0; top: 0; width: 100%; height: 100%; border-color: rgba(255, 210, 90, 0.7); }
+    </style>
+  </head>
+
+  <body>
+    <div class="aurora"></div>
+    <div class="grid"></div>
+    <div class="foto"></div>
+    <div class="veu"></div>
+
+    <div class="conteudo">
+      <p class="eyebrow">Desenvolvedor · Pesquisador · UFMG</p>
+      <h1>
+        Visão computacional, <span class="destaque">agentes de IA</span><br />
+        e aplicações de dados
+      </h1>
+      <div class="rodape">
+        <span class="ponto"></span>
+        <span>thiagohsal.github.io/Portfolio</span>
+        <span class="separador"></span>
+        <span>Artigo publicado no IEEE</span>
+      </div>
+    </div>
+
+    <div class="zona zona-foto"></div>
+  </body>
+</html>
