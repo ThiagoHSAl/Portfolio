@@ -267,6 +267,11 @@
   transform: none;
 }
 
+/* Conteúdo da primeira tela: já nasce pronto, sem transição nem atraso. */
+.reveal.is-instant {
+  transition: none;
+}
+
 @keyframes page-in {
   from {
     opacity: 0;
