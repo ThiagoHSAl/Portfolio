@@ -178,6 +178,7 @@ export const en: Dict = {
     educationTitle: 'Education',
     skillsTitle: 'Technical skills',
     extrasTitle: 'Additional activities',
+    downloadPdf: 'Download résumé as PDF',
     presentLabel: 'present',
     fundingLabel: 'Funding',
   },

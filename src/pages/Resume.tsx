@@ -1,6 +1,8 @@
 import type { ReactNode } from 'react'
 import { Reveal } from '../components/Reveal'
+import { FileTextIcon } from '../components/Icons'
 import { ChipList, ExternalLink, PageHeader } from '../components/ui'
+import { asset } from '../lib/asset'
 import { publications } from '../data/publications'
 import { educationEntries, experienceEntries, researchEntries, extras, skillGroups, type TimelineEntry } from '../data/resume'
 import { useI18n } from '../i18n'
@@ -78,6 +80,11 @@ export function Resume() {
       <PageHeader eyebrow={t.resume.eyebrow} title={t.resume.title} lead={t.resume.lead} />
 
       <div className="max-w-3xl space-y-12">
+        {/* Uma página em A4, gerada a partir de tools/curriculo.html. */}
+        <a href={asset('thiago-almeida-curriculo.pdf')} download className="btn btn-primary w-fit">
+          <FileTextIcon className="size-4" />
+          {t.resume.downloadPdf}
+        </a>
         <Section title={t.resume.researchTitle}>
           <Timeline entries={researchEntries} />
         </Section>

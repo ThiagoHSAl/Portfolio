@@ -89,6 +89,20 @@ partir de `INICIO_BOMBEIROS` em `src/lib/tempo.ts` — não precisa ser editado 
 string do dicionário ou do conteúdo aceita marcadores `{nome}`; a substituição acontece no
 provedor de idioma (`src/i18n/index.tsx`).
 
+### Currículo em PDF
+
+`public/thiago-almeida-curriculo.pdf` — uma página A4, gerada a partir de `tools/curriculo.html` e
+oferecida para download na página de Currículo do site.
+
+Decisões que valem manter ao editar: **coluna única** e cabeçalhos padrão (ATS embaralha layout
+multicoluna), **texto real** e nunca dado dentro de imagem, datas à direita, ordem cronológica
+inversa e uma página só. O texto extraído com `pdftotext` deve conter todos os dados — é o teste de
+que um sistema de triagem consegue ler.
+
+Para regerar, renderize a página com o Chrome em A4 (`--print-to-pdf`, ou `page.pdf` do Puppeteer
+com `preferCSSPageSize: true` e `tagged: true`). Se o conteúdo crescer e passar de uma página, use
+`pdfinfo` para conferir e ajuste o espaçamento antes de cortar conteúdo.
+
 ### Capa do LinkedIn
 
 `public/img/capa-linkedin.jpg` é a imagem de fundo do perfil do LinkedIn, 1584x396 (4:1). O fonte

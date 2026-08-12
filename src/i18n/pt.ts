@@ -176,6 +176,7 @@ export const pt = {
     educationTitle: 'Formação',
     skillsTitle: 'Competências técnicas',
     extrasTitle: 'Atividades complementares',
+    downloadPdf: 'Baixar currículo em PDF',
     presentLabel: 'atual',
     fundingLabel: 'Fomento',
   },
