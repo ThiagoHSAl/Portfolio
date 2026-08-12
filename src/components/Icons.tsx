@@ -1,6 +1,6 @@
 type IconProps = { className?: string }
 
-/** Ícones inline em `currentColor` — nada de fonte de ícones ou requisição externa. */
+/** Ícones inline em `currentColor`: nada de fonte de ícones ou requisição externa. */
 function base(className = 'size-5') {
   return {
     className,
@@ -117,7 +117,7 @@ export function ServerIcon({ className = 'size-4' }: IconProps) {
   )
 }
 
-/** Retículo de detecção — usado como marca das seções de percepção visual. */
+/** Retículo de detecção, usado como marca das seções de percepção visual. */
 export function TargetIcon({ className = 'size-6' }: IconProps) {
   return (
     <svg {...base(className)}>

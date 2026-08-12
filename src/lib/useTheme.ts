@@ -6,7 +6,7 @@ const STORAGE_KEY = 'theme'
 
 /**
  * O tema já foi aplicado no <html> pelo script inline do index.html, então aqui só
- * lemos o estado atual do DOM — nunca há divergência entre a primeira pintura e o React.
+ * lemos o estado atual do DOM, de modo que nunca há divergência entre a primeira pintura e o React.
  */
 export function useTheme(): { theme: Theme; toggle: () => void } {
   const [theme, setTheme] = useState<Theme>(() =>

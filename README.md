@@ -1,4 +1,4 @@
-# Portfólio — Thiago Henrique Silva de Almeida
+# Portfólio de Thiago Henrique Silva de Almeida
 
 Portfólio pessoal bilíngue (PT/EN), com tema claro/escuro. Reúne a iniciação científica no
 [VerLab](https://verlab.dcc.ufmg.br/) (DCC/UFMG), o artigo publicado no IEEE Xplore e os projetos
@@ -52,7 +52,7 @@ src/
 
 ### Onde editar o conteúdo
 
-Todo o conteúdo é dado tipado — não há texto solto em JSX:
+Todo o conteúdo é dado tipado. Não há texto solto em JSX:
 
 - **Textos de interface** (menus, rótulos, botões): `src/i18n/pt.ts` e `src/i18n/en.ts`.
   O dicionário português é o contrato; o inglês precisa ter exatamente a mesma forma, e o
@@ -78,25 +78,25 @@ fica versionada justamente para permitir reenquadrar depois sem precisar da foto
 
 Para reenquadrar, abra **`tools/recortar.html`** no navegador: arraste a foto dentro do quadrado,
 ajuste o tamanho pelas barras, confira nas miniaturas como fica em cada lugar do site e baixe. O
-arquivo baixado substitui `public/img/thiago.jpg`. A ferramenta é uma página só, sem dependência —
-se o navegador bloquear a leitura do arquivo local (`file://`), use o botão "Usar outra foto…" para
+arquivo baixado substitui `public/img/thiago.jpg`. A ferramenta é uma página só, sem dependência. Se
+o navegador bloquear a leitura do arquivo local (`file://`), use o botão "Usar outra foto…" para
 escolher a imagem à mão, ou sirva a pasta com `python3 -m http.server`.
 
 ### Tempo de serviço
 
 O tempo no Corpo de Bombeiros aparece no texto como o marcador `{anosBombeiro}` e é calculado a
-partir de `INICIO_BOMBEIROS` em `src/lib/tempo.ts` — não precisa ser editado a cada ano. Qualquer
+partir de `INICIO_BOMBEIROS` em `src/lib/tempo.ts`, e não precisa ser editado a cada ano. Qualquer
 string do dicionário ou do conteúdo aceita marcadores `{nome}`; a substituição acontece no
 provedor de idioma (`src/i18n/index.tsx`).
 
 ### Currículo em PDF
 
-`public/thiago-almeida-curriculo.pdf` — uma página A4, gerada a partir de `tools/curriculo.html` e
+`public/thiago-almeida-curriculo.pdf` é uma página A4, gerada a partir de `tools/curriculo.html` e
 oferecida para download na página de Currículo do site.
 
 Decisões que valem manter ao editar: **coluna única** e cabeçalhos padrão (ATS embaralha layout
 multicoluna), **texto real** e nunca dado dentro de imagem, datas à direita, ordem cronológica
-inversa e uma página só. O texto extraído com `pdftotext` deve conter todos os dados — é o teste de
+inversa e uma página só. O texto extraído com `pdftotext` deve conter todos os dados. É o teste de
 que um sistema de triagem consegue ler.
 
 Para regerar, renderize a página com o Chrome em A4 (`--print-to-pdf`, ou `page.pdf` do Puppeteer
@@ -111,14 +111,14 @@ numa janela de 1584x396 e salve como JPEG.
 
 O arquivo mora em `public/` de propósito, ainda que o site não o use: assim ele fica acessível em
 `https://thiagohsal.github.io/Portfolio/img/capa-linkedin.jpg`, o que permite baixá-lo do celular na
-hora de trocar a capa. Adicionando `?guias` — na verdade, a classe `guias` no `<body>` — a página
+hora de trocar a capa. Adicionando `?guias` (na verdade, a classe `guias` no `<body>`), a página
 desenha a área coberta pela foto de perfil, para conferir que nada importante cai ali.
 
 ### Cartão de compartilhamento (og:image)
 
 A imagem que aparece na prévia de WhatsApp, LinkedIn e afins é `public/img/og.jpg`,
-1200×630. Ela é gerada a partir de `tools/og-card.html` — o mesmo layout e as mesmas fontes
-do site — renderizando a página num navegador em 1200×630 e salvando como JPEG. Para
+1200×630. Ela é gerada a partir de `tools/og-card.html`, com o mesmo layout e as mesmas fontes
+do site, renderizando a página num navegador em 1200×630 e salvando como JPEG. Para
 regerar depois de trocar a foto ou o texto, abra `tools/og-card.html` no navegador com a
 janela nessa medida e capture, ou renderize por linha de comando.
 
@@ -135,5 +135,5 @@ com `VITE_BASE=/`.
 
 ## Licença
 
-Código sob licença MIT. Textos, imagens e resultados de pesquisa são de autoria própria — o
+Código sob licença MIT. Textos, imagens e resultados de pesquisa são de autoria própria. O
 artigo citado tem os direitos de publicação do IEEE.

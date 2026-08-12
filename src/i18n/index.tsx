@@ -26,8 +26,8 @@ const LangContext = createContext<LangContextValue | null>(null)
 
 /**
  * Substitui marcadores `{nome}` em qualquer string do dicionário ou do conteúdo,
- * recursivamente. Existe para que dados que envelhecem — como o tempo de serviço no
- * Corpo de Bombeiros — sejam calculados na hora em vez de escritos à mão.
+ * recursivamente. Existe para que dados que envelhecem, como o tempo de serviço no
+ * Corpo de Bombeiros, sejam calculados na hora em vez de escritos à mão.
  */
 function interpolar<T>(valor: T, vars: Record<string, string>): T {
   if (typeof valor === 'string') {

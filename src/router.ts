@@ -2,7 +2,7 @@ import { useSyncExternalStore } from 'react'
 
 /**
  * Roteador por hash, em ~40 linhas. O GitHub Pages não reescreve URLs, e um hash
- * dispensa qualquer configuração de servidor — o custo é a barra `#/` no endereço.
+ * dispensa qualquer configuração de servidor. O custo é a barra `#/` no endereço.
  */
 export const routes = ['home', 'sobre', 'projetos', 'pesquisa', 'curriculo'] as const
 

@@ -5,7 +5,7 @@ import { ArrowRightIcon, FileTextIcon, GithubIcon, GlobeIcon, ServerIcon } from 
 import { Reveal } from './Reveal'
 import { CheckList, ChipList, ExternalLink, Prose } from './ui'
 
-/** Gradiente de identidade de cada projeto — o único lugar com cores fora dos tokens. */
+/** Gradiente de identidade de cada projeto: o único lugar com cores fora dos tokens. */
 const toneGradient: Record<Tone, string> = {
   cyan: 'linear-gradient(90deg, #3ddbf5, #2a86d6)',
   amber: 'linear-gradient(90deg, #ffb347, #e2762a)',

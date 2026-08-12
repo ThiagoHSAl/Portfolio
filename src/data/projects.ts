@@ -44,14 +44,14 @@ export const projects: Project[] = [
       pt: 'Detecção aérea de pessoas para busca e salvamento',
       en: 'Aerial person detection for search and rescue',
     },
-    period: { pt: '2025 — atual', en: '2025 — present' },
+    period: { pt: 'desde 2025', en: 'since 2025' },
     context: {
       pt: 'Iniciação científica · VerLab · DCC/UFMG',
       en: 'Undergraduate research · VerLab · DCC/UFMG',
     },
     tagline: {
-      pt: 'Um quadricóptero de baixo custo que encontra pessoas sozinho e devolve a coordenada geográfica — transferindo a inferência para uma estação em terra por Wi-Fi HaLow.',
-      en: 'A low-cost quadrotor that finds people on its own and returns the geographic coordinate — offloading inference to a ground station over Wi-Fi HaLow.',
+      pt: 'Um quadricóptero de baixo custo que encontra pessoas sozinho e devolve a coordenada geográfica, transferindo a inferência para uma estação em terra por Wi-Fi HaLow.',
+      en: 'A low-cost quadrotor that finds people on its own and returns the geographic coordinate, offloading inference to a ground station over Wi-Fi HaLow.',
     },
     cover: {
       src: 'img/sar-deteccao.jpg',
@@ -63,12 +63,12 @@ export const projects: Project[] = [
     thumb: 'img/sar-deteccao-destaque.jpg',
     body: {
       pt: [
-        'Detectores modernos precisam de GPU, e GPU a bordo custa peso, energia e autonomia — exatamente o que um quadricóptero pequeno não tem para dar. Em vez de encolher o modelo até caber, este sistema separa as duas coisas: a aeronave apenas captura e transmite; a inferência acontece em terra.',
+        'Detectores modernos precisam de GPU, e GPU a bordo custa peso, energia e autonomia, exatamente o que um quadricóptero pequeno não tem para dar. Em vez de encolher o modelo até caber, este sistema separa as duas coisas: a aeronave apenas captura e transmite; a inferência acontece em terra.',
         'A bordo, um Raspberry Pi Zero recebe o comando de disparo via MAVLink, fotografa em 2592×1944 e grava, junto da imagem, a posição GNSS e o yaw do instante da captura. A estação em terra puxa as imagens pelo enlace IEEE 802.11ah, roda o YOLOv12s com inferência fatiada e converte cada caixa detectada em latitude e longitude por fotogrametria: GSD calculado a partir da altitude, rotação pelo yaw, deslocamento somado à posição do drone.',
         'A escassez de dados rotulados foi resolvida com treino sim-to-real em dois estágios: pré-treino em 3.000 imagens geradas no Unity com altitude, iluminação e pose randomizadas, seguido de ajuste fino num corpus híbrido de imagens reais e sintéticas. Com apenas 193 imagens reais de treino, o modelo chegou a 0,963 de revocação no conjunto de teste real.',
       ],
       en: [
-        'Modern detectors need a GPU, and a GPU on board costs weight, power and endurance — exactly what a small quadrotor cannot spare. Instead of shrinking the model until it fits, this system splits the two concerns: the aircraft only captures and transmits; inference happens on the ground.',
+        'Modern detectors need a GPU, and a GPU on board costs weight, power and endurance, exactly what a small quadrotor cannot spare. Instead of shrinking the model until it fits, this system splits the two concerns: the aircraft only captures and transmits; inference happens on the ground.',
         'On board, a Raspberry Pi Zero receives the trigger command over MAVLink, shoots at 2592×1944, and stores the GNSS position and yaw of the capture instant alongside the image. The ground station pulls the images over the IEEE 802.11ah link, runs YOLOv12s with sliced inference, and turns every detected box into latitude and longitude through photogrammetry: GSD derived from altitude, rotation by yaw, offset added to the drone position.',
         'Labeled-data scarcity was handled with a two-stage sim-to-real strategy: pre-training on 3,000 Unity-generated images with randomized altitude, illumination and pose, followed by fine-tuning on a hybrid corpus of real and synthetic imagery. With only 193 real training images, the model reached 0.963 recall on the real test set.',
       ],
@@ -92,7 +92,7 @@ export const projects: Project[] = [
     metrics: [
       {
         value: { pt: '0,963', en: '0.963' },
-        label: { pt: 'Revocação — YOLOv12s, teste real', en: 'Recall — YOLOv12s, real test set' },
+        label: { pt: 'Revocação no teste real (YOLOv12s)', en: 'Recall on the real test set (YOLOv12s)' },
       },
       {
         value: { pt: '0,975', en: '0.975' },
@@ -142,14 +142,14 @@ export const projects: Project[] = [
     },
     body: {
       pt: [
-        'Coaching de jogo costuma ser opinião. Aqui o diagnóstico é estatístico: um backend próprio em FastAPI agrega partidas da Riot API e monta benchmarks segmentados por rota, elo e divisão. O percentil do jogador dentro do seu próprio elo é o que aponta qual métrica está de fato fraca — não a intuição de quem olha.',
+        'Coaching de jogo costuma ser opinião. Aqui o diagnóstico é estatístico: um backend próprio em FastAPI agrega partidas da Riot API e monta benchmarks segmentados por rota, elo e divisão. O percentil do jogador dentro do seu próprio elo é o que aponta qual métrica está de fato fraca, não a intuição de quem olha.',
         'Sobre esse diagnóstico roda um agente em LangGraph com Gemini, tool-calling e memória de longo prazo por jogador. Ele não entrega a resposta pronta: conduz a tutoria pelo método socrático, com autocrítica determinística do formato, e recupera contexto tático de uma base de conhecimento curada por embeddings.',
-        'O aplicativo traz ainda análise de partidas no estilo op.gg — mapa de mortes, heatmap de posição, timing de objetivos, séries temporais contra o oponente direto, build e ordem de habilidades —, plano de treino com monitor autônomo que reavalia o progresso quando detecta partidas novas, login multiusuário e conformidade com a LGPD.',
+        'O aplicativo traz ainda análise de partidas no estilo op.gg, com mapa de mortes, heatmap de posição, timing de objetivos, séries temporais contra o oponente direto, build e ordem de habilidades. Vêm junto um plano de treino com monitor autônomo que reavalia o progresso quando detecta partidas novas, login multiusuário e conformidade com a LGPD.',
       ],
       en: [
-        'Game coaching is usually opinion. Here the diagnosis is statistical: a purpose-built FastAPI backend aggregates matches from the Riot API and assembles benchmarks segmented by role, rank and division. The player’s percentile within their own rank is what identifies the genuinely weak metric — not the intuition of whoever is watching.',
+        'Game coaching is usually opinion. Here the diagnosis is statistical: a purpose-built FastAPI backend aggregates matches from the Riot API and assembles benchmarks segmented by role, rank and division. The player’s percentile within their own rank is what identifies the genuinely weak metric, not the intuition of whoever is watching.',
         'On top of that diagnosis runs a LangGraph agent with Gemini, tool-calling and long-term per-player memory. It does not hand over the answer: it conducts the tutoring Socratically, with a deterministic self-critique of the format, and retrieves tactical context from a curated knowledge base through embeddings.',
-        'The app also includes op.gg-style match analysis — death map, position heatmap, objective timing, time series against the direct opponent, build and skill order — a training plan with an autonomous monitor that re-evaluates progress when new matches appear, multi-user login, and LGPD compliance.',
+        'The app also includes op.gg-style match analysis, with death map, position heatmap, objective timing, time series against the direct opponent, build and skill order. Alongside it come a training plan with an autonomous monitor that re-evaluates progress when new matches appear, multi-user login, and LGPD compliance.',
       ],
     },
     highlights: {
@@ -216,19 +216,19 @@ export const projects: Project[] = [
       en: 'Coursework · Information Organization and Processing (UFMG)',
     },
     tagline: {
-      pt: 'Busca literária em linguagem natural que devolve não uma lista de links, mas um objeto informacional enriquecido — e explica por que aquele livro serve.',
-      en: 'Natural-language book search that returns not a list of links but an enriched information object — and explains why that book fits.',
+      pt: 'Busca literária em linguagem natural que devolve não uma lista de links, mas um objeto informacional enriquecido, com a explicação de por que aquele livro serve.',
+      en: 'Natural-language book search that returns not a list of links but an enriched information object, with an explanation of why that book fits.',
     },
     body: {
       pt: [
         'O problema é de encontrabilidade: catálogos digitais têm metadados incompletos ou mal categorizados, e o leitor precisa conhecer o vocabulário técnico do acervo para achar o que quer. O BookAdvisor tira esse peso do usuário.',
-        'O Gemini age como tradutor invisível: converte o pedido em linguagem natural — em qualquer idioma — nos filtros que a Google Books API entende (`subject`, `inauthor`, `intitle`, `inpublisher`). Em seguida o sistema consulta em paralelo a Google Books e a Open Library com um ThreadPoolExecutor, e normaliza os metadados brutos para o vocabulário do Schema.org, serializando em JSON-LD.',
-        'Os resultados são separados em três eixos — mais relevante, melhor avaliado e mais recente — para que a relevância textual não esconda obras de baixa qualidade informacional. No fim, o LLM lê os dados estruturados do livro escolhido e justifica a recomendação diante do pedido original.',
+        'O Gemini age como tradutor invisível: converte o pedido em linguagem natural, em qualquer idioma, nos filtros que a Google Books API entende (`subject`, `inauthor`, `intitle`, `inpublisher`). Em seguida o sistema consulta em paralelo a Google Books e a Open Library com um ThreadPoolExecutor, e normaliza os metadados brutos para o vocabulário do Schema.org, serializando em JSON-LD.',
+        'Os resultados são separados em três eixos (mais relevante, melhor avaliado e mais recente) para que a relevância textual não esconda obras de baixa qualidade informacional. No fim, o LLM lê os dados estruturados do livro escolhido e justifica a recomendação diante do pedido original.',
       ],
       en: [
         'The problem is discoverability: digital catalogs carry incomplete or badly categorized metadata, and the reader has to know the collection’s technical vocabulary to find anything. BookAdvisor takes that burden off the user.',
-        'Gemini acts as an invisible translator: it converts the natural-language request — in any language — into the filters the Google Books API understands (`subject`, `inauthor`, `intitle`, `inpublisher`). The system then queries Google Books and Open Library in parallel with a ThreadPoolExecutor, and normalizes the raw metadata into Schema.org vocabulary, serialized as JSON-LD.',
-        'Results are split along three axes — most relevant, best rated and most recent — so that textual relevance does not bury informationally weak entries. Finally, the LLM reads the structured data of the selected book and justifies the recommendation against the original request.',
+        'Gemini acts as an invisible translator: it converts the natural-language request, in any language, into the filters the Google Books API understands (`subject`, `inauthor`, `intitle`, `inpublisher`). The system then queries Google Books and Open Library in parallel with a ThreadPoolExecutor, and normalizes the raw metadata into Schema.org vocabulary, serialized as JSON-LD.',
+        'Results are split along three axes (most relevant, best rated and most recent) so that textual relevance does not bury informationally weak entries. Finally, the LLM reads the structured data of the selected book and justifies the recommendation against the original request.',
       ],
     },
     highlights: {
@@ -281,8 +281,8 @@ export const projects: Project[] = [
     name: { pt: 'Datapólis', en: 'Datapólis' },
     period: { pt: '2026', en: '2026' },
     context: {
-      pt: 'Projeto aplicado · Organização e Tratamento da Informação — OTI071 (UFMG)',
-      en: 'Applied project · Information Organization and Processing — OTI071 (UFMG)',
+      pt: 'Projeto aplicado · Organização e Tratamento da Informação (OTI071, UFMG)',
+      en: 'Applied project · Information Organization and Processing (OTI071, UFMG)',
     },
     tagline: {
       pt: 'Transparência pública municipal: uma nota comparável de 0 a 5 para cada município brasileiro, num mapa coroplético navegável.',
@@ -290,14 +290,14 @@ export const projects: Project[] = [
     },
     body: {
       pt: [
-        'O dado público existe — espalhado por portais diferentes, em escalas diferentes, sem nada que permita comparar dois municípios de forma honesta. O Datapólis reúne indicadores de economia, educação, saúde e segurança numa nota única, com os pesos declarados abertamente.',
+        'O dado público existe, mas espalhado por portais diferentes, em escalas diferentes, sem nada que permita comparar dois municípios de forma honesta. O Datapólis reúne indicadores de economia, educação, saúde e segurança numa nota única, com os pesos declarados abertamente.',
         'A nota combina PIB per capita (20%), IDEB dos anos iniciais (20%), cobertura de atenção primária (15%), mortalidade infantil (15%, invertida), ocorrências criminais por 100 mil habitantes (15%, invertida) e gasto municipal em saúde (15%). Indicador ausente não penaliza o município: os pesos são renormalizados sobre o que existe.',
-        'A navegação é um mapa em D3.js com zoom de estados para municípios, busca com autocomplete e comparação lado a lado entre duas cidades. Cada município também expõe seus metadados em Dublin Core (ISO 15836) por uma rota de API — o próprio dado é catalogável.',
+        'A navegação é um mapa em D3.js com zoom de estados para municípios, busca com autocomplete e comparação lado a lado entre duas cidades. Cada município também expõe seus metadados em Dublin Core (ISO 15836) por uma rota de API, de modo que o próprio dado é catalogável.',
       ],
       en: [
-        'Public data exists — scattered across different portals, at different scales, with nothing that lets you honestly compare two municipalities. Datapólis brings together economic, education, health and public-safety indicators into a single score, with the weights stated openly.',
+        'Public data exists, but scattered across different portals, at different scales, with nothing that lets you honestly compare two municipalities. Datapólis brings together economic, education, health and public-safety indicators into a single score, with the weights stated openly.',
         'The score combines GDP per capita (20%), early-years IDEB education index (20%), primary-care coverage (15%), infant mortality (15%, inverted), criminal incidents per 100k inhabitants (15%, inverted) and municipal health spending (15%). A missing indicator does not penalize the municipality: the weights are renormalized over whatever is available.',
-        'Navigation is a D3.js map with zoom from states down to municipalities, autocomplete search and side-by-side comparison of two cities. Each municipality also exposes its metadata in Dublin Core (ISO 15836) through an API route — the data itself is catalogable.',
+        'Navigation is a D3.js map with zoom from states down to municipalities, autocomplete search and side-by-side comparison of two cities. Each municipality also exposes its metadata in Dublin Core (ISO 15836) through an API route, so the data itself is catalogable.',
       ],
     },
     highlights: {

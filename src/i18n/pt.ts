@@ -50,7 +50,7 @@ export const pt = {
     focus: [
       {
         title: 'Percepção e robótica',
-        text: 'Visão computacional em hardware que não perdoa: detectores para vista aérea, inferência fatiada em alta resolução e a integração do que voa — autopiloto, companion computer, câmera e rádio. É a frente da minha iniciação científica no VerLab, medida em campo e não só em conjunto de teste.',
+        text: 'Visão computacional em hardware que não perdoa: detectores para vista aérea, inferência fatiada em alta resolução e a integração de autopiloto, companion computer, câmera e rádio. É a frente da minha iniciação científica no VerLab, medida em campo e não só em conjunto de teste.',
         items: ['PyTorch', 'YOLOv11 / v12', 'SAHI', 'OpenCV', 'Unity', 'ROS 2', 'MAVLink', 'Pixhawk'],
       },
       {
@@ -60,7 +60,7 @@ export const pt = {
       },
       {
         title: 'Dados e aplicações',
-        text: 'A ponta que entrega: APIs próprias, modelagem de dados, metadados padronizados e visualização que deixa o número comparável. Do backend de benchmarks em FastAPI ao mapa coroplético do Datapólis — e a este portfólio.',
+        text: 'A ponta que entrega: APIs próprias, modelagem de dados, metadados padronizados e visualização que deixa o número comparável. Vai do backend de benchmarks em FastAPI ao mapa coroplético do Datapólis, e inclui este portfólio.',
         items: ['FastAPI', 'Flask', 'PostgreSQL', 'SQLite', 'D3.js', 'React', 'TypeScript', 'JSON-LD'],
       },
     ],
@@ -75,13 +75,13 @@ export const pt = {
 
   about: {
     eyebrow: 'Sobre mim',
-    title: 'Desenvolvedor e pesquisador — cheguei ao código pela mecatrônica',
+    title: 'Desenvolvedor e pesquisador que chegou ao código pela mecatrônica',
     photoAlt: 'Retrato de Thiago Henrique Silva de Almeida',
     factsTitle: 'Em resumo',
     facts: [
       { label: 'Onde', value: 'Belo Horizonte, MG · Brasil' },
-      { label: 'Formação', value: 'Sistemas de Informação — UFMG' },
-      { label: 'Pesquisa', value: 'VerLab — Visão Computacional e Robótica, DCC/UFMG' },
+      { label: 'Formação', value: 'Sistemas de Informação, UFMG' },
+      { label: 'Pesquisa', value: 'VerLab (Visão Computacional e Robótica), DCC/UFMG' },
       { label: 'Foco', value: 'Percepção visual, agentes de IA, dados e aplicações' },
       { label: 'Também', value: 'Bombeiro militar (CBMMG) desde 2017' },
       { label: 'Idiomas', value: 'Português (nativo) · Inglês (técnico)' },
@@ -91,22 +91,22 @@ export const pt = {
         title: 'Quem eu sou',
         paragraphs: [
           'Meu nome é Thiago Henrique Silva de Almeida. Sou técnico em Mecatrônica pelo CEFET-MG e graduando em Sistemas de Informação na UFMG, onde faço iniciação científica no **VerLab**, o laboratório de visão computacional e robótica do Departamento de Ciência da Computação.',
-          'Eletrônica, instrumentação e automação vieram antes de qualquer linha de código. Isso deixou marca no jeito que eu programo — penso primeiro na restrição real e no que vai ser medido, depois na abstração.',
+          'Eletrônica, instrumentação e automação vieram antes de qualquer linha de código. Isso deixou marca no jeito que eu programo. Penso primeiro na restrição real e no que vai ser medido, depois na abstração.',
         ],
       },
       {
         title: 'O que eu construo',
         paragraphs: [
-          'Trabalho em três frentes, e nenhuma delas é hobby da outra. O que se repete não é a tecnologia: é o método — entender a restrição real antes de escolher a ferramenta.',
+          'Trabalho em três frentes, e nenhuma delas é hobby da outra. O que se repete não é a tecnologia, é o método: entender a restrição real antes de escolher a ferramenta.',
           'Na **pesquisa**, no VerLab, desenvolvo detecção e geolocalização de pessoas por VANT para busca e salvamento. Um quadricóptero de baixo custo não carrega GPU, então a inferência sai de bordo e vai para uma estação em terra por Wi-Fi HaLow. O trabalho rendeu um artigo publicado no IEEE Xplore, com validação em voo autônomo.',
-          'Em **agentes de IA**, o EloRise é o projeto mais completo que já escrevi: um tutor socrático para League of Legends com agente em LangGraph, memória de longo prazo por jogador, RAG sobre base tática curada, login multiusuário e um backend próprio de benchmarks em FastAPI alimentado pela Riot API. O BookAdvisor ataca outro problema — encontrabilidade — usando o LLM como tradutor entre a linguagem do leitor e o vocabulário técnico dos catálogos, com saída em Schema.org e JSON-LD.',
+          'Em **agentes de IA**, o EloRise é o projeto mais completo que já escrevi: um tutor socrático para League of Legends com agente em LangGraph, memória de longo prazo por jogador, RAG sobre base tática curada, login multiusuário e um backend próprio de benchmarks em FastAPI alimentado pela Riot API. O BookAdvisor ataca outro problema, o da encontrabilidade, usando o LLM como tradutor entre a linguagem do leitor e o vocabulário técnico dos catálogos, com saída em Schema.org e JSON-LD.',
           'Em **dados e web**, o Datapólis reúne indicadores públicos de todos os municípios brasileiros numa nota comparável, com mapa em D3.js, comparação lado a lado e uma API de metadados em Dublin Core. Este portfólio também é meu: React, TypeScript e Tailwind, com roteador próprio.',
         ],
       },
       {
         title: 'Como eu trabalho',
         paragraphs: [
-          '**Medir antes de afirmar.** Todo número que aparece neste portfólio saiu de um experimento com metodologia descrita — inclusive os que não favorecem a minha tese.',
+          '**Medir antes de afirmar.** Todo número que aparece neste portfólio saiu de um experimento com metodologia descrita, inclusive os que não favorecem a minha tese.',
           '**Restrição é informação.** Não ter GPU a bordo não é obstáculo a contornar com força bruta; é o que define a arquitetura. As melhores decisões dos meus projetos vieram de levar as limitações a sério.',
           '**Campo é o juiz.** Métrica em conjunto de teste é hipótese. Só voo, terra irregular e enlace degradando dizem se aquilo funciona.',
         ],
@@ -114,7 +114,7 @@ export const pt = {
       {
         title: 'Fora do código',
         paragraphs: [
-          'Treino **programação competitiva em C++** com foco no ICPC — é o meu exercício de algoritmos e estruturas de dados sob pressão de tempo, e um contrapeso saudável ao ritmo de pesquisa.',
+          'Treino **programação competitiva em C++** com foco no ICPC. É o meu exercício de algoritmos e estruturas de dados sob pressão de tempo, e um contrapeso saudável ao ritmo de pesquisa.',
           'Continuo interessado em tudo que voa e em tudo que mede: fotogrametria, termografia radiométrica, calibração de sensores. Boa parte disso acabou virando pesquisa.',
         ],
       },
@@ -150,7 +150,7 @@ export const pt = {
       'Três voos autônomos em padrão de varredura a 10 m de altitude e 1 m/s, sobre um alvo humano cuja posição era conhecida pela equipe de terra, mas não pelo sistema de percepção. O erro é a distância de Haversine até a coordenada de referência.',
     linkLabel: 'Caracterização do enlace Wi-Fi HaLow',
     linkNote:
-      'Ensaio em ambiente semiurbano com vegetação e edificações. A banda cai abaixo de 1 Mbps depois de ~270 m, mas a latência se mantém sob 130 ms até 743 m — ou seja, o vídeo tem alcance limitado, o comando e a telemetria não.',
+      'Ensaio em ambiente semiurbano com vegetação e edificações. A banda cai abaixo de 1 Mbps depois de ~270 m, mas a latência se mantém sob 130 ms até 743 m. Ou seja: o vídeo tem alcance limitado, o comando e a telemetria não.',
     linkImageAlt: 'Gráfico de banda em Mbps e latência média em ms em função da distância em metros',
     ackLabel: 'Agradecimentos',
     table: {

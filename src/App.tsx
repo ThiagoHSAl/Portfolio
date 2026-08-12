@@ -32,7 +32,7 @@ export function App() {
       curriculo: t.nav.resume,
     }
     document.title =
-      route === 'home' ? `${profile.shortName} — ${t.home.eyebrow}` : `${names[route]} · ${profile.shortName}`
+      route === 'home' ? `${profile.shortName} · ${t.home.eyebrow}` : `${names[route]} · ${profile.shortName}`
   }, [route, t])
 
   // Trocar de rota num app de página única deve levar o leitor ao topo.

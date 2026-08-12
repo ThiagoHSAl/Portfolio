@@ -21,7 +21,7 @@ export const verlab = {
   name: 'VerLab',
   url: 'https://verlab.dcc.ufmg.br/',
   full: {
-    pt: 'VerLab — Laboratório de Visão Computacional e Robótica, DCC/UFMG',
-    en: 'VerLab — Computer Vision and Robotics Laboratory, DCC/UFMG',
+    pt: 'VerLab (Laboratório de Visão Computacional e Robótica), DCC/UFMG',
+    en: 'VerLab (Computer Vision and Robotics Laboratory), DCC/UFMG',
   } satisfies Localized,
 }

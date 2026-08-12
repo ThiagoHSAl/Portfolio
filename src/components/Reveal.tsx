@@ -11,7 +11,7 @@ type RevealProps = {
 type Estado = 'oculto' | 'imediato' | 'revelado'
 
 /**
- * Revela o conteúdo quando ele entra na viewport — mas só o que começa abaixo da
+ * Revela o conteúdo quando ele entra na viewport, mas só o que começa abaixo da
  * primeira tela. O que já está na dobra inicial é pintado pronto, sem transição:
  * animar a primeira tela dá a impressão de página ainda carregando, principalmente
  * no celular, onde cabe pouca coisa.

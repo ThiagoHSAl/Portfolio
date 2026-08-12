@@ -95,7 +95,7 @@ export function Resume() {
               <li key={publication.id} className="card p-5">
                 <p className="font-display text-base leading-snug font-semibold">{publication.title}</p>
                 <p className="mt-2 text-sm text-muted">
-                  {publication.authors.join(', ')} — <span className="italic">{publication.venue}</span>,{' '}
+                  {publication.authors.join(', ')}. <span className="italic">{publication.venue}</span>,{' '}
                   {publication.year}
                 </p>
                 <div className="mt-4 flex flex-wrap items-center gap-3">
