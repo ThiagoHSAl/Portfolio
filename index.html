@@ -1,63 +1,49 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        Portfólio Thiago Henrique
-    </title>
-    <link rel="stylesheet" href="./styles/style.css">
-</head>
+    <title>Thiago Almeida — Visão computacional, robótica aérea e IA aplicada</title>
+    <meta
+      name="description"
+      content="Portfólio de Thiago Henrique Silva de Almeida: pesquisa em visão computacional e robótica aérea no VerLab/UFMG, detecção de pessoas por VANT para busca e salvamento, agentes de IA e engenharia de dados."
+    />
+    <meta name="author" content="Thiago Henrique Silva de Almeida" />
+    <meta name="theme-color" content="#070a10" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f6f7f9" media="(prefers-color-scheme: light)" />
 
-<body>
-    <header class="cabecalho">
-        <nav class="cabecalho__menu">
-            <a class="cabecalho__menu__link" href="index.html">
-                Home
-            </a>
-            <a class="cabecalho__menu__link" href="about.html">
-                Sobre mim
-            </a>
-            <a class="cabecalho__menu__link" href="curriculo.html">
-                Currículo
-            </a>
-            <a class="cabecalho__menu__link" href="projetos.html">
-                Projetos
-            </a>
-        </nav>
-    </header>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Thiago Almeida — Visão computacional, robótica aérea e IA aplicada" />
+    <meta
+      property="og:description"
+      content="Pesquisa em visão computacional e robótica aérea no VerLab/UFMG. Detecção e geolocalização de pessoas por VANT para busca e salvamento."
+    />
+    <meta property="og:image" content="https://thiagohsal.github.io/Portfolio/img/sar-deteccao.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
 
-    <main class="apresentacao">
-        <section class="apresentacao__conteudo">
-            <h1 class="apresentacao__conteudo__titulo">
-                Transforme suas ideias em experiências digitais incríveis 
-                <strong class="TituloDestacado">
-                    com um Front-end único!
-                </strong>
-            </h1> 
-            <p class="apresentacao__conteudo__texto">
-                Olá! Sou Thiago Henrique, desenvolvedor Front-end com especialidade em 
-                <strong>
-                    HTML e CSS.
-                </strong> 
-                Desenvolvo soluções visuais modernas e funcionais para impulsionar sua marca. Vamos criar algo extraordinário juntos?         
-            </p>
-            <div class="apresentacao__links">
-                <h2 class="apresentacao__links__subtitulo">
-                    Acesse minhas redes:
-                </h2>
-                <a class="apresentacao__links__navegacao" href="https://www.linkedin.com/in/thiago-almeida-474864106/">
-                    <img class="apresentacao__links__navegacao__logos" src="./assets/linkedin.png" alt="Ícone do Linkedin">
-                    Linkedin
-                </a>
-                <a class="apresentacao__links__navegacao" href="https://github.com/ThiagoHSAl">
-                    <img class="apresentacao__links__navegacao__logos" src="./assets/github.png" alt="ícone do Github">
-                    Github
-                </a>
-            </div>
-        </section>
-        <img class="apresentacao__imagem" src="./assets/Foto.jpg" alt="MINHA FOTO">
-    </main>
-</body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      // Aplica tema e idioma antes da primeira pintura, para não haver "flash" de tema errado.
+      try {
+        const salvo = localStorage.getItem('theme')
+        const escuro = salvo ? salvo === 'dark' : !matchMedia('(prefers-color-scheme: light)').matches
+        document.documentElement.classList.toggle('dark', escuro)
+        document.documentElement.lang = localStorage.getItem('lang') === 'en' ? 'en' : 'pt-BR'
+      } catch {
+        /* localStorage bloqueado: segue com o padrão escuro do HTML */
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

@@ -1,18 +1,94 @@
-# Portfólio 
-Olá, Bem vindo ao meu projeto de portfólio.
+# Portfólio — Thiago Henrique Silva de Almeida
 
-![image](assets/Capa-README.jpg)
+Portfólio pessoal bilíngue (PT/EN), com tema claro/escuro. Reúne a iniciação científica no
+[VerLab](https://verlab.dcc.ufmg.br/) (DCC/UFMG), o artigo publicado no IEEE Xplore e os projetos
+autorais.
 
+**No ar:** https://thiagohsal.github.io/Portfolio/
 
-## Ferramentas utilizadas:
+## Stack
 
-* HTML
+| Camada | Escolha |
+| --- | --- |
+| UI | React 19 + TypeScript (modo estrito) |
+| Build | Vite 7 |
+| Estilo | Tailwind CSS 4 (tokens de tema em `src/index.css`) |
+| Rotas | Roteador por hash próprio (`src/router.ts`), ~40 linhas, sem dependência |
+| Deploy | GitHub Actions → GitHub Pages |
 
-* CSS
+Sem dependências de runtime além de `react` e `react-dom`: os ícones são SVG inline e a
+animação de entrada é CSS com `IntersectionObserver`.
 
-* Flex-box
+## Rodando localmente
 
-## Feito por:
+Requer **Node 20.19+ ou 22+** (exigência do Vite 7).
 
-### Thiago Henrique
-### Linkedin: https://www.linkedin.com/in/thiago-almeida-474864106/
+```bash
+npm install
+npm run dev        # servidor de desenvolvimento em http://localhost:5173
+```
+
+Outros comandos:
+
+```bash
+npm run typecheck  # tsc --noEmit
+npm run build      # typecheck + build de produção em dist/
+npm run preview    # serve o dist/ já construído
+```
+
+## Estrutura
+
+```
+src/
+├── main.tsx          entrypoint
+├── App.tsx           casca: nav, rota ativa, título do documento, footer
+├── router.ts         roteador por hash
+├── index.css         tokens de cor, tema claro/escuro e classes de componente
+├── i18n/             provedor de idioma + dicionários pt.ts / en.ts
+├── data/             conteúdo tipado (perfil, projetos, publicações, currículo)
+├── components/       Nav, Footer, ProjectCard, Reveal, ícones, primitivas de UI
+└── pages/            Home, About, Projects, Research, Resume
+```
+
+### Onde editar o conteúdo
+
+Todo o conteúdo é dado tipado — não há texto solto em JSX:
+
+- **Textos de interface** (menus, rótulos, botões): `src/i18n/pt.ts` e `src/i18n/en.ts`.
+  O dicionário português é o contrato; o inglês precisa ter exatamente a mesma forma, e o
+  `tsc` reclama se faltar uma chave.
+- **Projetos:** `src/data/projects.ts`. Campos bilíngues usam a forma `{ pt: '…', en: '…' }`.
+- **Publicações:** `src/data/publications.ts` (inclui a tabela de resultados dos modelos).
+- **Currículo:** `src/data/resume.ts`.
+- **Perfil e contatos:** `src/data/profile.ts`.
+
+Os textos aceitam `**negrito**` e `` `código` `` (ver `src/components/RichText.tsx`).
+
+### Imagens
+
+Arquivos em `public/img/` são referenciados por `asset('img/arquivo.jpg')`, que resolve o
+prefixo de deploy. Para trocar uma capa de projeto, basta apontar o campo `cover.src`.
+
+As capas do EloRise, BookAdvisor e Datapólis são capturas de tela dos apps no ar, recortadas em
+16:10. Quando a interface de algum deles mudar, vale recapturar para o portfólio não mostrar uma
+versão antiga.
+
+### Tempo de serviço
+
+O tempo no Corpo de Bombeiros aparece no texto como o marcador `{anosBombeiro}` e é calculado a
+partir de `INICIO_BOMBEIROS` em `src/lib/tempo.ts` — não precisa ser editado a cada ano. Qualquer
+string do dicionário ou do conteúdo aceita marcadores `{nome}`; a substituição acontece no
+provedor de idioma (`src/i18n/index.tsx`).
+
+## Deploy
+
+O push na `main` dispara `.github/workflows/deploy.yml`, que roda o typecheck, o build e publica
+o `dist/`. No repositório, é preciso deixar **Settings → Pages → Source** em **GitHub Actions**.
+
+O `base` do Vite é `/Portfolio/` (subcaminho do GitHub Pages). Em domínio próprio, rode o build
+com `VITE_BASE=/`.
+
+## Licença
+
+Código sob licença MIT. Textos, imagens e resultados de pesquisa são de autoria própria — o
+artigo citado tem os direitos de publicação do IEEE.
