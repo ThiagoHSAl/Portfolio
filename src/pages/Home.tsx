@@ -46,7 +46,9 @@ function Hero() {
             </a>
           </div>
 
-          <ul className="mt-8 flex items-center gap-2">
+          {/* flex-wrap é obrigatório: o chip do e-mail é largo e, sem quebrar linha,
+              alargava a coluna do grid além da viewport no mobile. */}
+          <ul className="mt-8 flex max-w-full flex-wrap items-center gap-2">
             <li>
               <a
                 href={profile.github}
@@ -72,10 +74,10 @@ function Hero() {
             <li>
               <a
                 href={`mailto:${profile.email}`}
-                className="flex h-10 items-center gap-2 rounded-xl border border-line bg-surface/70 px-4 text-xs text-muted backdrop-blur transition-colors hover:border-accent hover:text-ink"
+                className="flex h-10 max-w-full min-w-0 items-center gap-2 rounded-xl border border-line bg-surface/70 px-4 text-xs text-muted backdrop-blur transition-colors hover:border-accent hover:text-ink"
               >
-                <MailIcon className="size-4" />
-                <span className="font-mono">{profile.email}</span>
+                <MailIcon className="size-4 shrink-0" />
+                <span className="truncate font-mono">{profile.email}</span>
               </a>
             </li>
           </ul>
@@ -107,7 +109,7 @@ function Facts() {
     <section className="shell pb-16 sm:pb-20">
       <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
         {t.home.facts.map((fact, index) => (
-          <StatTile key={fact.label} value={fact.value} label={fact.label} delay={index * 70} />
+          <StatTile key={fact.label} value={fact.value} label={fact.label} href={fact.href} delay={index * 70} />
         ))}
       </div>
     </section>

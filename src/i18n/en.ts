@@ -11,8 +11,8 @@ export const en: Dict = {
 
   ui: {
     skipToContent: 'Skip to content',
-    openMenu: 'Open menu',
-    closeMenu: 'Close menu',
+    openMenu: 'Menu',
+    closeMenu: 'Close',
     themeToDark: 'Switch to dark theme',
     themeToLight: 'Switch to light theme',
     languageLabel: 'Language',
@@ -42,10 +42,10 @@ export const en: Dict = {
     ctaSecondary: 'Read the published paper',
     photoAlt: 'Portrait of Thiago Henrique Silva de Almeida',
     facts: [
-      { value: '3 live apps', label: 'Original projects you can open right now' },
-      { value: 'IEEE CROS 2026', label: 'Peer-reviewed paper, indexed' },
-      { value: 'VerLab · UFMG', label: 'Undergraduate research in robotics' },
-      { value: '{anosBombeiro} years', label: 'In the Minas Gerais Fire Department' },
+      { value: '3 live apps', label: 'Original projects you can open right now', href: '#/projetos' },
+      { value: 'IEEE CROS 2026', label: 'Peer-reviewed paper, indexed', href: '#/pesquisa' },
+      { value: 'VerLab · UFMG', label: 'Undergraduate research in robotics', href: 'https://verlab.dcc.ufmg.br/' },
+      { value: '{anosBombeiro} years', label: 'In the Minas Gerais Fire Department', href: '#/curriculo' },
     ],
     focusEyebrow: 'What I work on',
     focusTitle: 'Three tracks, the same way of attacking a problem',

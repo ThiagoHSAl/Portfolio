@@ -106,14 +106,15 @@ export function Nav() {
         <div className="flex items-center gap-2">
           <LangToggle />
           <ThemeToggle />
+          {/* O rótulo "Menu" fica visível: só o ícone não era reconhecido como navegação. */}
           <button
             type="button"
             onClick={() => setMenuOpen((open) => !open)}
             aria-expanded={menuOpen}
-            aria-label={menuOpen ? t.ui.closeMenu : t.ui.openMenu}
-            className="grid size-9 place-items-center rounded-lg border border-line bg-surface-2 text-muted transition-colors hover:text-ink md:hidden"
+            className="flex h-9 items-center gap-1.5 rounded-lg border border-line bg-surface-2 px-2.5 text-xs font-semibold text-ink-soft transition-colors hover:border-accent hover:text-ink md:hidden"
           >
             {menuOpen ? <CloseIcon className="size-4" /> : <MenuIcon className="size-4" />}
+            {menuOpen ? t.ui.closeMenu : t.ui.openMenu}
           </button>
         </div>
       </div>

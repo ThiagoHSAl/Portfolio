@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import { useI18n } from '../i18n'
-import { ArrowUpRightIcon, CheckIcon } from './Icons'
+import { ArrowRightIcon, ArrowUpRightIcon, CheckIcon } from './Icons'
 import { RichText } from './RichText'
 import { Reveal } from './Reveal'
 
@@ -111,11 +111,52 @@ export function ExternalLink({
   )
 }
 
-export function StatTile({ value, label, delay = 0 }: { value: string; label: string; delay?: number }) {
-  return (
-    <Reveal delay={delay} className="card card-lift p-5">
-      <p className="font-display text-xl font-bold tracking-tight text-ink sm:text-2xl">{value}</p>
+export function StatTile({
+  value,
+  label,
+  href,
+  delay = 0,
+}: {
+  value: string
+  label: string
+  /** Presente: o quadro vira um link, com a seta indicando para onde leva. */
+  href?: string
+  delay?: number
+}) {
+  const externo = href?.startsWith('http') ?? false
+
+  const conteudo = (
+    <>
+      <div className="flex items-start justify-between gap-2">
+        <p className="font-display text-xl font-bold tracking-tight text-ink sm:text-2xl">{value}</p>
+        {href &&
+          (externo ? (
+            <ArrowUpRightIcon className="mt-1 size-4 shrink-0 text-muted transition-colors group-hover:text-accent" />
+          ) : (
+            <ArrowRightIcon className="mt-1 size-4 shrink-0 text-muted transition-colors group-hover:text-accent" />
+          ))}
+      </div>
       <p className="mt-2 text-xs leading-snug text-muted">{label}</p>
+    </>
+  )
+
+  if (!href) {
+    return (
+      <Reveal delay={delay} className="card h-full p-5">
+        {conteudo}
+      </Reveal>
+    )
+  }
+
+  return (
+    <Reveal delay={delay} className="h-full">
+      <a
+        href={href}
+        {...(externo ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+        className="card card-lift group block h-full p-5 hover:border-accent"
+      >
+        {conteudo}
+      </a>
     </Reveal>
   )
 }

@@ -9,8 +9,8 @@ export const pt = {
 
   ui: {
     skipToContent: 'Ir para o conteúdo',
-    openMenu: 'Abrir menu',
-    closeMenu: 'Fechar menu',
+    openMenu: 'Menu',
+    closeMenu: 'Fechar',
     themeToDark: 'Ativar tema escuro',
     themeToLight: 'Ativar tema claro',
     languageLabel: 'Idioma',
@@ -40,10 +40,10 @@ export const pt = {
     ctaSecondary: 'Ler o artigo publicado',
     photoAlt: 'Retrato de Thiago Henrique Silva de Almeida',
     facts: [
-      { value: '3 apps no ar', label: 'Projetos próprios que você pode abrir agora' },
-      { value: 'IEEE CROS 2026', label: 'Artigo publicado e indexado' },
-      { value: 'VerLab · UFMG', label: 'Iniciação científica em robótica' },
-      { value: '{anosBombeiro} anos', label: 'No Corpo de Bombeiros de Minas Gerais' },
+      { value: '3 apps no ar', label: 'Projetos próprios que você pode abrir agora', href: '#/projetos' },
+      { value: 'IEEE CROS 2026', label: 'Artigo publicado e indexado', href: '#/pesquisa' },
+      { value: 'VerLab · UFMG', label: 'Iniciação científica em robótica', href: 'https://verlab.dcc.ufmg.br/' },
+      { value: '{anosBombeiro} anos', label: 'No Corpo de Bombeiros de Minas Gerais', href: '#/curriculo' },
     ],
     focusEyebrow: 'No que eu trabalho',
     focusTitle: 'Três frentes, o mesmo jeito de atacar o problema',
