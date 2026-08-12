@@ -77,7 +77,7 @@ export const en: Dict = {
 
   about: {
     eyebrow: 'About me',
-    title: 'Mechatronics technician, developer, researcher — in that order',
+    title: 'Developer and researcher — I came to code through mechatronics',
     photoAlt: 'Portrait of Thiago Henrique Silva de Almeida',
     factsTitle: 'At a glance',
     facts: [
@@ -93,7 +93,7 @@ export const en: Dict = {
         title: 'Who I am',
         paragraphs: [
           'My name is Thiago Henrique Silva de Almeida. I hold a technical degree in Mechatronics from CEFET-MG and I am an Information Systems undergraduate at UFMG, where I do research at **VerLab**, the computer vision and robotics laboratory of the Computer Science Department.',
-          'I came to software through mechatronics: electronics, instrumentation and automation before any line of code. That left a mark on how I program — I think first about the real constraint and about what will be measured, and only then about the abstraction.',
+          'Electronics, instrumentation and automation came before any line of code. That left a mark on how I program — I think first about the real constraint and about what will be measured, and only then about the abstraction.',
         ],
       },
       {

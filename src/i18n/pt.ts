@@ -75,7 +75,7 @@ export const pt = {
 
   about: {
     eyebrow: 'Sobre mim',
-    title: 'Técnico em mecatrônica, desenvolvedor, pesquisador — nessa ordem',
+    title: 'Desenvolvedor e pesquisador — cheguei ao código pela mecatrônica',
     photoAlt: 'Retrato de Thiago Henrique Silva de Almeida',
     factsTitle: 'Em resumo',
     facts: [
@@ -91,7 +91,7 @@ export const pt = {
         title: 'Quem eu sou',
         paragraphs: [
           'Meu nome é Thiago Henrique Silva de Almeida. Sou técnico em Mecatrônica pelo CEFET-MG e graduando em Sistemas de Informação na UFMG, onde faço iniciação científica no **VerLab**, o laboratório de visão computacional e robótica do Departamento de Ciência da Computação.',
-          'Cheguei ao software pela mecatrônica: eletrônica, instrumentação e automação antes de qualquer linha de código. Isso deixou marca no jeito que eu programo — penso primeiro na restrição real e no que vai ser medido, depois na abstração.',
+          'Eletrônica, instrumentação e automação vieram antes de qualquer linha de código. Isso deixou marca no jeito que eu programo — penso primeiro na restrição real e no que vai ser medido, depois na abstração.',
         ],
       },
       {
