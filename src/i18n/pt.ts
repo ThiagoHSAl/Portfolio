@@ -82,7 +82,7 @@ export const pt = {
       { label: 'Onde', value: 'Belo Horizonte, MG · Brasil' },
       { label: 'Formação', value: 'Sistemas de Informação, UFMG' },
       { label: 'Pesquisa', value: 'VerLab (Visão Computacional e Robótica), DCC/UFMG' },
-      { label: 'Foco', value: 'Percepção visual, agentes de IA, dados e aplicações' },
+      { label: 'Foco', value: 'Visão computacional, agentes de IA, dados e aplicações' },
       { label: 'Também', value: 'Bombeiro militar (CBMMG) desde 2017' },
       { label: 'Idiomas', value: 'Português (nativo) · Inglês (técnico)' },
     ],

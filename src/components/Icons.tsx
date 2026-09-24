@@ -117,7 +117,7 @@ export function ServerIcon({ className = 'size-4' }: IconProps) {
   )
 }
 
-/** Retículo de detecção, usado como marca das seções de percepção visual. */
+/** Retículo de detecção, usado como marca das seções de visão computacional. */
 export function TargetIcon({ className = 'size-6' }: IconProps) {
   return (
     <svg {...base(className)}>

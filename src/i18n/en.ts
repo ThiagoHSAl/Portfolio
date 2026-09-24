@@ -84,7 +84,7 @@ export const en: Dict = {
       { label: 'Based in', value: 'Belo Horizonte, MG · Brazil' },
       { label: 'Education', value: 'Information Systems, UFMG' },
       { label: 'Research', value: 'VerLab (Computer Vision and Robotics), DCC/UFMG' },
-      { label: 'Focus', value: 'Visual perception, AI agents, data and applications' },
+      { label: 'Focus', value: 'Computer vision, AI agents, data and applications' },
       { label: 'Also', value: 'Military firefighter (CBMMG) since 2017' },
       { label: 'Languages', value: 'Portuguese (native) · English (technical)' },
     ],

@@ -13,8 +13,8 @@ export const profile = {
 }
 
 export const role: Localized = {
-  pt: 'Desenvolvedor e pesquisador · Percepção visual, agentes de IA e dados',
-  en: 'Developer and researcher · Visual perception, AI agents and data',
+  pt: 'Desenvolvedor e pesquisador · Visão computacional, agentes de IA e dados',
+  en: 'Developer and researcher · Computer vision, AI agents and data',
 }
 
 export const verlab = {
