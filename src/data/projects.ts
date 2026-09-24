@@ -122,7 +122,7 @@ export const projects: Project[] = [
       'IEEE 802.11ah',
     ],
     links: [
-      { kind: 'repo', href: 'https://github.com/ThiagoHSAl/Iniciacao_cientifica' },
+      { kind: 'repo', href: 'https://github.com/ThiagoHSAl/drone_sar' },
       { kind: 'route', href: '#/pesquisa' },
     ],
   },
